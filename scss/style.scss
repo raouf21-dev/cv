@@ -1,0 +1,253 @@
+@import "reset";
+@import "base";
+@import "classes";
+@import "animations";
+@import "media-queries";
+
+.grid-container {
+    display: grid;
+    grid: 
+        "picture header " auto
+        "aside main " 1fr
+        / 350px auto
+    ;
+        min-height: 100vh;
+
+        @include xs {
+            grid: 
+            " header " auto
+            " picture " auto
+            " main " auto
+            " aside " auto
+            /  auto
+        ;
+        }
+}
+
+header {
+    grid-area: header;
+    margin-top: 5rem;
+    background-color: #D7D7D7;
+    padding: 4rem 2rem;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include xs {
+        padding: 2rem .5rem;
+        width: 100%;
+    }
+
+    hr  {
+        color: var(--dark);
+        font-weight: bolder;
+        width: 700px;
+        margin: 2rem 0;
+    }
+    h1 {
+        font-size: 6rem;
+        line-height: 8rem;
+        font-weight: 300;
+        letter-spacing: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-right: 2px solid #000;
+        border-left: 2px solid #000;
+        animation: bounce 1.5s;
+        @include xs {
+                font-size: 4rem;
+                letter-spacing: .5rem;
+        }
+        @include sm {
+            font-size: 4.5rem;
+        }
+    }
+    h2 {
+        letter-spacing: 2rem;
+        font-size: 2.8rem;
+        animation: bounce 1.5s;
+        @include xs {
+            font-size: 2.2rem;
+    }
+        @include sm {
+            font-size: 2.5rem;
+    }
+    }
+}
+
+.picture {
+    grid-area: picture;
+    // padding: 4rem;
+    background: var(--primary);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid #fff;
+    img {
+        border-radius: 50%;
+        border: 2px solid #D7D7D7;
+        width: 70%;
+        @include xs {
+            width: 30%;
+            margin: 3rem 0;
+        }
+    }
+}
+
+aside {
+    grid-area: aside;
+    background: linear-gradient(to top, var(--dark), var(--primary));
+    color: rgb(245, 243, 243);
+    border-right: 3px solid #fff;
+    padding: 5rem;
+    // min-height: 1500px;
+    .block {
+        text-align: center;
+        margin: 8rem 0;
+        .profile-detail {
+            text-align: left;
+            line-height: 1.5;
+        }
+        h3 {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #D7D7D7;
+            display: block;
+        }
+        i {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.7rem;
+        }
+        .bar-skill {
+            margin: 2rem 0;
+            height: 10px;
+            border: 1px solid #D7D7D7;
+            .bar-skill-progress {
+                background-color: #fff;
+                height: 9px;
+            }
+            .html {
+                width: 85%;
+            }
+            .css {
+                width: 85%;
+            }
+            .sass {
+                width: 85%;
+            }
+            .jquery {
+                width: 65%;
+            }
+            .js {
+                width: 75%;
+            }
+            .mysql {
+                width: 65%;
+                
+            }
+            .php {
+                width: 55%;
+            }
+        }
+            .arb, .fr {
+                width: 100%;
+            }
+            .en {
+                width: 80%;
+            }
+            .language {
+                margin: 2rem 0;
+                h5 {
+                    margin-bottom: 0.8rem;
+                }
+                .stars-skill {
+                    
+                    i {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+    }
+}
+
+main {
+    grid-area: main;
+    background-color: #edeef0;
+    padding: 10rem;
+    @include xs {
+        padding: 4rem 2rem;
+    }
+    @include sm {
+        padding: 3rem 2rem;
+    }
+    section {
+        padding-bottom: 5rem;
+        padding-top: 5rem;
+        hr {
+            width: 40%;
+            color: #000;
+            border: 2px solid #000;
+            margin-bottom: 3rem;
+        }
+        .objective-detail {
+            max-width: 750px;
+        }
+        p {
+            padding-left: 2rem;
+            font-size: 1.8rem;
+            display: inline-block;
+        }
+        .shcool-name {
+            font-weight: bold;
+        }
+        h4 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            padding-right: 2.4rem;
+            display: inline-block;
+            height: 100%;
+        }
+    }
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h2 {
+        letter-spacing: 1.5rem;
+        margin-bottom: 5rem;
+    }
+    
+    .degree {
+        padding-left: 5rem;
+        margin-left: 5rem;
+        border-left: 1px dashed #000;
+        position: relative;
+        
+        i {
+            font-size: 1rem;
+        }
+        
+        a {
+            font-size: 2rem;
+            padding-left: 1.2rem;
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+            transition: all .3s ease;
+                &:hover {
+                    opacity: .5;
+            }
+        }
+        .project-detail {
+            padding-left: 15rem;
+            @include xs {
+                width: 100%;
+            }
+        }
+    }
+}
